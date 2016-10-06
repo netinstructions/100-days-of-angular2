@@ -1,22 +1,36 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common'
 
 import { Vegetable } from './vegetable';
+import { VegetableService } from './vegetable.service';
 
 @Component({
+    moduleId: module.id,
     selector: 'my-vegetable-detail',
-    template: `
-    <div *ngIf="vegetable">
-      <h2>{{vegetable.name}} details!</h2>
-      <div><label>id: </label>{{vegetable.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="vegetable.name" placeholder="name">
-      </div>
-    </div>
-    `
+    templateUrl: 'vegetable-detail.component.html',
+    styleUrls: [ 'vegetable-detail.component.css']
 })
 
-export class VegetableDetailComponent {
-    @Input()
+export class VegetableDetailComponent implements OnInit {
     vegetable: Vegetable;
+
+    constructor(
+      private vegetableService: VegetableService,
+      private route: ActivatedRoute,
+      private location: Location
+    ) {
+
+    }
+
+    ngOnInit(): void {
+      this.route.params.forEach((params: Params) => {
+        let id = +params['id']; // Convert id string into number with JavaScript + operator
+        this.vegetableService.getVegetable(id).then(vegetable => this.vegetable = vegetable)
+      });
+    }
+
+    goBack(): void {
+      this.location.back();
+    }
 }

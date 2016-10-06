@@ -1,0 +1,8 @@
+<h3>Very Best Vegetables</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let vegetable of vegetables" (click)="gotoDetail(vegetable)" class="col-1-4">
+    <div class="module vegetable">
+      <h4>{{vegetable.name}}</h4>
+    </div>
+  </div>
+</div>
