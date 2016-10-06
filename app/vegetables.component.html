@@ -1,0 +1,14 @@
+<h2>My Vegetables</h2>
+<ul class="vegetables">
+  <li *ngFor="let vegetable of vegetables"
+    [class.selected]="vegetable === selectedVegetable"
+    (click)="onSelect(vegetable)">
+    <span class="badge">{{vegetable.id}}</span> {{vegetable.name}}
+  </li>
+</ul>
+<div *ngIf="selectedVegetable">
+  <h2>
+    {{selectedVegetable.name | uppercase}} is my vegetable
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
