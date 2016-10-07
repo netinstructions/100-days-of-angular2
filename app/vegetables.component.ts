@@ -6,10 +6,9 @@ import { VegetableService } from './vegetable.service';
 
 
 @Component({
-  moduleId: module.id,
   selector: 'my-vegetables',
-  templateUrl : 'vegetables.component.html',
-  styleUrls: [ 'vegetables.component.css' ],
+  templateUrl : './vegetables.component.html',
+  styleUrls: [ './vegetables.component.css' ],
   providers: [VegetableService]
 })
 

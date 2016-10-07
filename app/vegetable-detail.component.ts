@@ -6,10 +6,9 @@ import { Vegetable } from './vegetable';
 import { VegetableService } from './vegetable.service';
 
 @Component({
-    moduleId: module.id,
     selector: 'my-vegetable-detail',
-    templateUrl: 'vegetable-detail.component.html',
-    styleUrls: [ 'vegetable-detail.component.css']
+    templateUrl: './vegetable-detail.component.html',
+    styleUrls: [ './vegetable-detail.component.css']
 })
 
 export class VegetableDetailComponent implements OnInit {
