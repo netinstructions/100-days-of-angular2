@@ -25,11 +25,17 @@ module.exports = {
         loader: 'html'
       },
       {
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+        loader: 'file?name=assets/[name].[hash].[ext]'
+      },
+      {
         test: /\.css$/,
+        exclude: root('app'),
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
       },
       {
         test: /\.css$/,
+        include: root('app'),
         loader: 'raw'
       }
     ]
@@ -38,15 +44,26 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
-    })
-
+    }),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    }),
+    new ExtractTextPlugin('[name].css')
   ],
 
+  devtool: 'cheap-module-eval-source-map',
+
   output: {
-    publicPath: 'http://localhost:8080/',
+    path: root('dist'),
+    publicPath: 'http://localhost:8085/',
     filename: '[name].js',
     chunkFilename: '[id].chunk.js'
   },
+
+  devServer: {
+    historyApiFallback: true,
+    stats: 'minimal'
+  }
 
 };
 

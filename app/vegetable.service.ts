@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Vegetable } from './vegetable';
 
 const VEGETABLES: Vegetable[] = [
-  { id: 11, name: 'Broccoli' },
+  { id: 11, name: 'Broccolini' },
   { id: 12, name: 'Eggplant' },
   { id: 13, name: 'Tomatoes' },
   { id: 14, name: 'Cucumbers' },
