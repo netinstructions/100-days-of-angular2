@@ -3,3 +3,4 @@ typings/
 .typingsrc
 app/**/*.js
 app/**/*.map
+dist/
