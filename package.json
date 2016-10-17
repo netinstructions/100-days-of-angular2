@@ -4,7 +4,8 @@
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8085",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "typings": "typings"
+    "typings": "typings",
+    "express": "node ./server/bin/www"
   },
   "license": "ISC",
   "dependencies": {
@@ -18,10 +19,16 @@
     "@angular/router": "~3.0.1",
     "@angular/upgrade": "~2.0.1",
     "angular-in-memory-web-api": "~0.1.1",
+    "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
+    "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
+    "serve-favicon": "^2.3.0",
     "zone.js": "^0.6.25"
   },
   "devDependencies": {
