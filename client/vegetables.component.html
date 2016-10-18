@@ -12,3 +12,8 @@
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
+
+<button (click)="testServer()">Test the server</button>
+<div *ngIf="testMessageFromServer">
+  <pre>server says: {{testMessageFromServer}}</pre>
+</div>

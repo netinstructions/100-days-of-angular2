@@ -1,11 +1,11 @@
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { VegetablesComponent } from './vegetables.component';
 import { DashboardComponent } from './dashboard.component';
 import { VegetableDetailComponent } from './vegetable-detail.component';
 
-const appRoutes: Routes = [
+const routes: Routes = [
     {
         path: '',
         redirectTo: '/dashboard',
@@ -26,4 +26,11 @@ const appRoutes: Routes = [
     
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+@NgModule({
+    imports: [ RouterModule.forRoot(routes)],
+    exports: [ RouterModule ]
+})
+
+export class AppRoutingModule {
+    
+}

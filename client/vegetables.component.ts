@@ -15,6 +15,7 @@ import { VegetableService } from './vegetable.service';
 export class VegetablesComponent implements OnInit {
   vegetables: Vegetable[];
   selectedVegetable: Vegetable;
+  testMessageFromServer: string;
 
   constructor(private router: Router, private vegetableService: VegetableService) {
 
@@ -34,5 +35,9 @@ export class VegetablesComponent implements OnInit {
 
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedVegetable.id]);
+  }
+
+  testServer(): void {
+    this.vegetableService.getTestMessage().then(response => this.testMessageFromServer = response);
   }
 }
