@@ -4,15 +4,15 @@ import { Component } from '@angular/core';
     selector: 'my-app',
     template: `
         <h1>{{title}}</h1>
-        <nav>
-            <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-            <a routerLink="/vegetables" routerLinkActive="active">Vegetables</a>
-        </nav>
+        <ul>
+            <li>Days 1-6: <a routerLink="/tour-of-vegetables" routerLinkActive="active">Tour of Vegetables</a></li>
+            <li>Days 7-?: <a routerLink="/message-of-the-moment" routerLinkActive="active">Message of the Moment</a></li>
+        <ul>
         <router-outlet></router-outlet>
     `,
     styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
-    title = '100 Vegetables of Angular 2';
+    title = '100 Days of Angular 2';
 }
