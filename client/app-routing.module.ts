@@ -5,8 +5,14 @@ import { VegetablesAppComponent } from './day-001-vegetables/vegetables-app.comp
 import { MessagesComponent } from './day-007-messages/messages.component';
 
 const routes: Routes = [
-    
-    
+    {
+        path: 'tour-of-vegetables',
+        component: VegetablesAppComponent
+    },
+    {
+        path: 'message-of-the-moment',
+        component: MessagesComponent
+    }
 ];
 
 @NgModule({

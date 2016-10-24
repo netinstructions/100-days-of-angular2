@@ -34,7 +34,7 @@ export class VegetablesComponent implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedVegetable.id]);
+    this.router.navigate(['/tour-of-vegetables/detail', this.selectedVegetable.id]);
   }
 
   testServer(): void {

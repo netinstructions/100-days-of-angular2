@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
     template: `
         <h1>{{title}}</h1>
         <nav>
-            <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-            <a routerLink="/vegetables" routerLinkActive="active">Vegetables</a>
+            <a routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+            <a routerLink="vegetables" routerLinkActive="active">Vegetables</a>
         </nav>
         <router-outlet></router-outlet>
     `,
@@ -13,5 +13,5 @@ import { Component } from '@angular/core';
 })
 
 export class VegetablesAppComponent {
-    title = '100 Vegetables of Angular 2';
+    title = 'Tour of Vegetables';
 }
