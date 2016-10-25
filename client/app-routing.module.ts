@@ -6,6 +6,11 @@ import { MessagesComponent } from './day-007-messages/messages.component';
 
 const routes: Routes = [
     {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'message-of-the-moment',
+    },
+    {
         path: 'tour-of-vegetables',
         component: VegetablesAppComponent
     },
