@@ -1,6 +1,6 @@
 h1 {
   font-size: 3em;
-  color: #191;
+  color: #2F2933;
   margin-bottom: 0;
 }
 h2 {
@@ -25,4 +25,7 @@ nav a:hover {
 }
 nav a.active {
   color: #039be5;
+}
+#top-nav {
+  padding-top: 10px;
 }

@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>Message of the Moment</h2>
+    <p id="messageOfTheMoment"><em>{{currentMessage}}</em></p>
+    <p>Think you're clever? Are you able to alliterate? Do you know anything that ryhmes with purple? Would YOU like to set the message of the moment, for all to see?! Or at least... until the next person sets it?<p>
+    <form>
+        <div class="form-group">
+            <label for="newMessage">New Message of the Moment</label>
+            <textarea id="newMessage" class="form-control" [(ngModel)]="newMessage"  [ngModelOptions]="{standalone: true}" placeholder="I think carrots are just ok."></textarea>
+        </div>
+        <button type="button" class="btn btn-primary btn-block btn-lg" [disabled]="!newMessage" (click)="submitMessage()">Declare this message to be the Message of the Moment</button>
+    </form>
+</div>

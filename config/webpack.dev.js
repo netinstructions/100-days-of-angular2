@@ -24,6 +24,10 @@ module.exports = webpackMerge(commonConfig, {
             '/api': {
                 target: 'http://localhost:3000',
                 secure: false
+            },
+            '/bootstrap.min.css': {
+                target: 'http://localhost:3000',
+                secure: false
             }
         }
     }
