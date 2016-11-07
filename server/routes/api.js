@@ -20,7 +20,7 @@ router.post('/post-message', function(req, res, next) {
     messageOfTheMoment = sanitizedMessage;
     res.json({'message': sanitizedMessage});
   } else {
-    res.json({'error': 'message not set'});
+    res.json({'error': 'message not set', 'length': req.body.message.length});
   }
 });
 

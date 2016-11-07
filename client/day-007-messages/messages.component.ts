@@ -11,6 +11,7 @@ export class MessagesComponent implements OnInit {
     
     currentMessage: string = '';
     newMessage: string;
+    validationResponse: string;
 
     constructor(private messagesService: MessagesService) {
 
@@ -21,8 +22,15 @@ export class MessagesComponent implements OnInit {
     }
 
     submitMessage(): void {
-        this.messagesService.postMessage(this.newMessage).then(message => this.currentMessage = message);
+        this.messagesService.postMessage(this.newMessage).then(response => {
+            if(response.error) {
+                this.validationResponse = 'Your message of the moment is ' + response.length + ' characters! Please keep it under 500 characters.';
+            } else if (response.message) {
+                this.currentMessage = response.message;
+                this.validationResponse = null;
+            }
+        });
     }
 
-    
+
 }

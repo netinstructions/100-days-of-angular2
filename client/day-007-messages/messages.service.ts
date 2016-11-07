@@ -15,13 +15,13 @@ export class MessagesService {
         .catch(this.handleError);
     }
 
-    postMessage (message: string): Promise<string> {
+    postMessage (message: string): Promise<any> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
         return this.http.post('api/post-message', { message }, options)
             .toPromise()
-            .then(response => response.json().message)
+            .then(response => response.json())
             .catch(this.handleError);
     }
 

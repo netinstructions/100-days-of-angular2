@@ -7,6 +7,8 @@
             <label for="newMessage">New Message of the Moment</label>
             <textarea id="newMessage" class="form-control" [(ngModel)]="newMessage"  [ngModelOptions]="{standalone: true}" placeholder="I think carrots are just ok."></textarea>
         </div>
-        <button type="button" class="btn btn-primary btn-block btn-lg" [disabled]="!newMessage" (click)="submitMessage()">Declare this message to be the Message of the Moment</button>
+        <div *ngIf="validationResponse" class="alert alert-danger" role="alert">{{validationResponse}}</div>
+        <button type="button" class="btn btn-primary btn-block btn-lg hidden-xs" [disabled]="!newMessage" (click)="submitMessage()">Declare this message to be the Message of the Moment</button>
+        <button type="button" class="btn btn-primary btn-block btn-lg visible-xs-block" [disabled]="!newMessage" (click)="submitMessage()">Declare this message to be the MotM</button>
     </form>
 </div>
