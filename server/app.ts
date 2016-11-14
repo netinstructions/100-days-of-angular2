@@ -1,5 +1,4 @@
 import * as express from 'express';
-import * as expressSanitizer from 'express-sanitizer';
 import * as path from 'path';
 import * as favicon from 'serve-favicon';
 import * as logger from 'morgan';
@@ -15,7 +14,6 @@ var app: express.Application = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(expressSanitizer());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../dist')));
 app.use(express.static(path.join(__dirname, '../public')));

@@ -24,12 +24,17 @@ And in another terminal:
 
     npm run backend
 
+And in another terminal:
+
+    tsc server/*.ts --watch
+
 Open up your browser and go to http://localhost:8085/ . Note that the back end runs on port 3000, but the server serving up the Angular 2 client knows to forward requests from `api/*` to the back end server on the other port.
 
 If you want to deploy to producton, you run:
 
     npm run build
     export NODE_ENV=production
+    tsc server/*.ts
     forever start ./server/bin/www
 
 which will serve the newly created files at `dist/` using Express, as well as any backend server side logic.
