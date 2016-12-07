@@ -14,7 +14,7 @@ Read my daily summaries on my [blog starting at day 1](http://www.netinstruction
 
 ## Running the code
 
-As of Day 5, you can run locally like this:
+As of Day 5, you can run locally like this (after `git clone` and `npm install`):
 
 In one terminal:
 
@@ -32,9 +32,12 @@ Open up your browser and go to http://localhost:8085/ . Note that the back end r
 
 If you want to deploy to producton, you run:
 
+    git clone 100-days-of-angular2
+    cd 100-days-of-angular2/
+    npm install
     npm run build
     export NODE_ENV=production
     tsc server/*.ts
     forever start ./server/bin/www
 
-which will serve the newly created files at `dist/` using Express, as well as any backend server side logic.
+which will serve the newly created files at `dist/` using Express, and Node.js/Express also handles backend server side logic.
