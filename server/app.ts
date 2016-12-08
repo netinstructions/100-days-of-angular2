@@ -1,3 +1,8 @@
+import 'angular2-universal-polyfills';
+import './__workaround.node'; // temporary until 2.1.1 things are patched in Core
+import { createEngine, ExpressEngineConfig } from 'angular2-express-engine';
+import { AppModule } from '../client/app.module';
+
 import * as express from 'express';
 import * as path from 'path';
 import * as favicon from 'serve-favicon';
@@ -17,6 +22,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../dist')));
 app.use(express.static(path.join(__dirname, '../public')));
+
+app.engine('.html', createEngine({}));
 
 app.use('/api', api);
 
