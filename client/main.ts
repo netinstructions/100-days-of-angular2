@@ -1,8 +1,9 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import 'angular2-universal-polyfills';
+import { platformUniversalDynamic } from 'angular2-universal';
 import { enableProdMode } from '@angular/core';
 import { AppModule } from './app.module';
 
-const platform = platformBrowserDynamic();
+const platform = platformUniversalDynamic();
 
 if (process.env.ENV === 'production') {
   enableProdMode();

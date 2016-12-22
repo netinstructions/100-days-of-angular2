@@ -1,3 +1,4 @@
+import { UniversalModule } from 'angular2-universal';
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +12,8 @@ import { VegetablesModule } from './day-001-vegetables/vegetables.module';
 import { MessagesComponent } from './day-007-messages/messages.component';
 
 @NgModule({
-  imports:      [ 
+  imports:      [
+    UniversalModule, 
     BrowserModule,
     FormsModule,
     VegetablesModule,

@@ -59,4 +59,23 @@ app.use(function(err: any, req: express.Request, res: express.Response, next: ex
 });
 
 
+app.get('/*', (req, res) => {
+
+  // Our Universal - express configuration object
+  const expressConfig : ExpressEngineConfig = {
+    req,
+    res,
+    ngModule: AppModule,
+    preboot: false,
+    baseUrl: '/',
+    requestUrl: req.originalUrl,
+    originUrl: 'http://localhost:3000'
+  };
+
+  // NOTE: everything passed in here will be set as properties to the top level Zone
+  // access these values in your code like this: Zone.current.get('req');
+  // this is temporary; we will have a non-Zone way of getting these soon
+  res.render('index', expressConfig);
+});
+
 module.exports = app;
